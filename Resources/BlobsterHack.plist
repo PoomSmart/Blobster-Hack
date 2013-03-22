@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>title</key>
+    <string>Blobster Hack</string>
+    <key>entry</key>
+    <dict>
+      <key>cell</key>
+      <string>PSLinkCell</string>
+      <key>icon</key>
+      <string>BSHack.png</string>
+      <key>label</key>
+      <string>Blobster Hack</string>
+    </dict>
+    <key>items</key>
+    <array>
+      <dict>
+        <key>cell</key>
+        <string>PSGroupCell</string>
+        <key>label</key>
+        <string>Blob Hacks</string>
+      </dict>
+      <dict>
+        <key>cell</key>
+        <string>PSSwitchCell</string>
+        <key>default</key>
+        <false/>
+        <key>defaults</key>
+        <string>com.PS.BlobsterHack</string>
+        <key>key</key>
+        <string>infinityBlobHealth</string>
+        <key>label</key>
+        <string>No Die (Common)</string>
+        <key>PostNotification</key>
+        <string>com.PS.BlobsterHack.settingschanged</string>
+      </dict>
+       <dict>
+        <key>cell</key>
+        <string>PSSwitchCell</string>
+        <key>default</key>
+        <false/>
+        <key>defaults</key>
+        <string>com.PS.BlobsterHack</string>
+        <key>key</key>
+        <string>hitMonsterWithoutDie</string>
+        <key>label</key>
+        <string>No Die (Hit Monsters)</string>
+        <key>PostNotification</key>
+        <string>com.PS.BlobsterHack.settingschanged</string>
+      </dict>
+      <dict>
+        <key>cell</key>
+        <string>PSSwitchCell</string>
+        <key>default</key>
+        <false/>
+        <key>defaults</key>
+        <string>com.PS.BlobsterHack</string>
+        <key>key</key>
+        <string>waterNoDie</string>
+        <key>label</key>
+        <string>No Die (Under Water)</string>
+        <key>PostNotification</key>
+        <string>com.PS.BlobsterHack.settingschanged</string>
+      </dict>
+       <dict>
+        <key>cell</key>
+        <string>PSSwitchCell</string>
+        <key>default</key>
+        <false/>
+        <key>defaults</key>
+        <string>com.PS.BlobsterHack</string>
+        <key>key</key>
+        <string>infinityKey</string>
+        <key>label</key>
+        <string>Infinity Keys</string>
+        <key>PostNotification</key>
+        <string>com.PS.BlobsterHack.settingschanged</string>
+      </dict>
+		<dict>
+        <key>cell</key>
+        <string>PSGroupCell</string>
+        <key>label</key>
+        <string>Monster Hacks</string>
+        <key>footerText</key>
+        <string>*Some monsters won't be able to see you.</string>
+      </dict>
+      <dict>
+        <key>cell</key>
+        <string>PSSwitchCell</string>
+        <key>default</key>
+        <false/>
+        <key>defaults</key>
+        <string>com.PS.BlobsterHack</string>
+        <key>key</key>
+        <string>suckerIsSuck</string>
+        <key>label</key>
+        <string>Sucker always Sleeps</string>
+        <key>PostNotification</key>
+        <string>com.PS.BlobsterHack.settingschanged</string>
+      </dict>
+       <dict>
+        <key>cell</key>
+        <string>PSSwitchCell</string>
+        <key>default</key>
+        <false/>
+        <key>defaults</key>
+        <string>com.PS.BlobsterHack</string>
+        <key>key</key>
+        <string>monsterNoAmmo</string>
+        <key>label</key>
+        <string>Range Bomb w/o ammo</string>
+        <key>PostNotification</key>
+        <string>com.PS.BlobsterHack.settingschanged</string>
+      </dict>
+       <dict>
+        <key>cell</key>
+        <string>PSSwitchCell</string>
+        <key>default</key>
+        <false/>
+        <key>defaults</key>
+        <string>com.PS.BlobsterHack</string>
+        <key>key</key>
+        <string>spikeyNoSpike</string>
+        <key>label</key>
+        <string>Spikey w/o spike</string>
+        <key>PostNotification</key>
+        <string>com.PS.BlobsterHack.settingschanged</string>
+      </dict>
+       <dict>
+        <key>cell</key>
+        <string>PSSwitchCell</string>
+        <key>default</key>
+        <false/>
+        <key>defaults</key>
+        <string>com.PS.BlobsterHack</string>
+        <key>key</key>
+        <string>monsterStupid</string>
+        <key>label</key>
+        <string>Blob not in Range*</string>
+        <key>PostNotification</key>
+        <string>com.PS.BlobsterHack.settingschanged</string>
+      </dict>
+       <dict>
+        <key>cell</key>
+        <string>PSSwitchCell</string>
+        <key>default</key>
+        <false/>
+        <key>defaults</key>
+        <string>com.PS.BlobsterHack</string>
+        <key>key</key>
+        <string>easyKillMonster</string>
+        <key>label</key>
+        <string>Jump Over to Kill</string>
+        <key>PostNotification</key>
+        <string>com.PS.BlobsterHack.settingschanged</string>
+      </dict>
+       <dict>
+        <key>cell</key>
+        <string>PSSwitchCell</string>
+        <key>default</key>
+        <false/>
+        <key>defaults</key>
+        <string>com.PS.BlobsterHack</string>
+        <key>key</key>
+        <string>oneHitKill</string>
+        <key>label</key>
+        <string>One Hit Kill</string>
+        <key>PostNotification</key>
+        <string>com.PS.BlobsterHack.settingschanged</string>
+      </dict>
+      <dict>
+        <key>cell</key>
+        <string>PSGroupCell</string>
+        <key>label</key>
+        <string>Objects Hacks</string>
+      </dict>
+       <dict>
+        <key>cell</key>
+        <string>PSSwitchCell</string>
+        <key>default</key>
+        <false/>
+        <key>defaults</key>
+        <string>com.PS.BlobsterHack</string>
+        <key>key</key>
+        <string>killCrusher</string>
+        <key>label</key>
+        <string>Kill Crusher</string>
+        <key>PostNotification</key>
+        <string>com.PS.BlobsterHack.settingschanged</string>
+      </dict>
+       <dict>
+        <key>cell</key>
+        <string>PSGroupCell</string>
+        <key>label</key>
+        <string>Bonus Hacks</string>
+      </dict>
+      <dict>
+		<key>cell</key>
+		<string>PSEditTextCell</string>
+		<key>detail</key>
+		<string>PSDetailController</string>
+		<key>defaults</key>
+		<string>com.PS.BlobsterHack</string>
+		<key>key</key>
+		<string>bonusValue</string>
+		<key>label</key>
+		<string>Bonus Multiplier</string>
+		<key>placeholder</key>
+		<string>Enter multiplier</string>
+		<key>isNumeric</key>
+		<true/>
+		<key>PostNotification</key>
+        <string>com.PS.BlobsterHack.settingschanged</string>
+	   </dict>
+		<dict>
+        <key>cell</key>
+        <string>PSGroupCell</string>
+        <key>label</key>
+        <string>Gameplay Hacks</string>
+        <key>footerText</key>
+        <string>*Any levels will be Bonus Level.
+**Buggy, tested and fairly result only in Retina iPhone/iPod.</string>
+      </dict>
+      <dict>
+        <key>cell</key>
+        <string>PSSwitchCell</string>
+        <key>default</key>
+        <false/>
+        <key>defaults</key>
+        <string>com.PS.BlobsterHack</string>
+        <key>key</key>
+        <string>alwaysBonusLevel</string>
+        <key>label</key>
+        <string>Always Bonus Level*</string>
+        <key>PostNotification</key>
+        <string>com.PS.BlobsterHack.settingschanged</string>
+      </dict>
+      <dict>
+        <key>cell</key>
+        <string>PSSwitchCell</string>
+        <key>default</key>
+        <false/>
+        <key>defaults</key>
+        <string>com.PS.BlobsterHack</string>
+        <key>key</key>
+        <string>largeScreen</string>
+        <key>label</key>
+        <string>Larger Game View**</string>
+        <key>PostNotification</key>
+        <string>com.PS.BlobsterHack.settingschanged</string>
+      </dict>
+       <dict>
+        <key>cell</key>
+        <string>PSSwitchCell</string>
+        <key>default</key>
+        <false/>
+        <key>defaults</key>
+        <string>com.PS.BlobsterHack</string>
+        <key>key</key>
+        <string>timeFreeze</string>
+        <key>label</key>
+        <string>Freeze Time (Arcade)</string>
+        <key>PostNotification</key>
+        <string>com.PS.BlobsterHack.settingschanged</string>
+      </dict>
+      <dict>
+        <key>cell</key>
+        <string>PSSwitchCell</string>
+        <key>default</key>
+        <false/>
+        <key>defaults</key>
+        <string>com.PS.BlobsterHack</string>
+        <key>key</key>
+        <string>raceTimeFreeze</string>
+        <key>label</key>
+        <string>Freeze Time (Race)</string>
+        <key>PostNotification</key>
+        <string>com.PS.BlobsterHack.settingschanged</string>
+      </dict>
+      <dict>
+        <key>cell</key>
+        <string>PSGroupCell</string>
+        <key>footerText</key>
+        <string>Created by PoomSmart</string>
+      </dict>
+    </array>
+  </dict>
+</plist>

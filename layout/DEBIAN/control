@@ -1,0 +1,9 @@
+Package: com.PS.BlobsterHack
+Name: Blobster Hack
+Depends: mobilesubstrate, preferenceloader
+Version: 1.0
+Architecture: iphoneos-arm
+Description: Hack Blobster!
+Author: PoomSmart
+Section: Hacks
+Icon: file:///Library/PreferenceBundles/BlobsterHackSettings.bundle/BSHack@2x.png
