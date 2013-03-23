@@ -355,5 +355,5 @@ static void PostNotification(CFNotificationCenterRef center, void *observer, CFS
 	CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, PostNotification, CFSTR("com.PS.BlobsterHack.settingschanged"), NULL, CFNotificationSuspensionBehaviorCoalesce);
 	loadHacks();
 	[pool drain];
-	if ([[NSBundle mainBundle].bundleIdentifier isEqualToString:@"com.chillingo.blobster"]) { %init(monster); %init(blob); %init(object); %init(bonus); %init(gameplay) }
+	if ([[NSBundle mainBundle].bundleIdentifier isEqualToString:@"com.chillingo.blobster"]) { %init(monster); %init(blob); %init(object); %init(bonus); %init(gameplay); }
 }
