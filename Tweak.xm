@@ -240,11 +240,11 @@ static BOOL RaceTimeFreeze;
 	%orig;
 	if (AutoBlobule) {
 		int i = 0;
-		for (i = 0; i < 250; i++) {	AddBonus(1); } }
+		for (i = 0; i < 250; i++) { AddBonus(1); } }
 	if (AutoShield) {
 		int i = 0;
 		for (i = 0; i < 1; i++) { AddBonus(8); } }
-	if (AutoSuperSpeed)	{
+	if (AutoSuperSpeed) {
 		int i = 0;
 		for (i = 0; i < 1; i++) { AddBonus(5); } }
 }
