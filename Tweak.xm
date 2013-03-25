@@ -6,7 +6,7 @@ static BOOL add = YES;
 - (void)addBonus:(int)arg1 fromTarget:(id)arg2;
 @end
 static id target;
-// Its function for easirt writing
+// Its function for easier writing
 static void AddBonus(int type)
 {
 	[[%c(DRBonusManager) sharedManager] addBonus:type fromTarget:target];
