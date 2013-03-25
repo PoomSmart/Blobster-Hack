@@ -1,8 +1,37 @@
 #import "substrate.h"
+static BOOL add = YES;
+// Very handy tool for adding Bonuses to Blob!
+@interface DRBonusManager
++ (id)sharedManager;
+- (void)addBonus:(int)arg1 fromTarget:(id)arg2;
+@end
+static id target;
+// Its function for easirt writing
+static void AddBonus(int type)
+{
+	[[%c(DRBonusManager) sharedManager] addBonus:type fromTarget:target];
+	// For Future reference, value of type:
+	// 1 = Blobule (Scaled Blob)
+	// 2 = Un-Blobule
+	// 3 = Upside-Down
+	// 4 = ?
+	// 5 = Super Speed (Orange Bonus)
+	// 6 = Speed Boost (Red Arrow)
+	// 7 = Angel
+	// 8 = Shield
+	// 9 = Swim Ring
+	// 10 = Shrink
+	// 11 = Water Blocker
+}
+
 static BOOL InfinityBlobHealth;
 static BOOL WaterNoDie;
 static BOOL HitMonsterWithoutDie;
 static BOOL InfinityKey;
+static BOOL AutoSR;
+static BOOL AutoBlobule;
+static BOOL AutoShield;
+static BOOL AutoSuperSpeed;
 
 static BOOL SuckerIsSuck;
 static BOOL MonsterNoAmmo;
@@ -43,7 +72,7 @@ static BOOL RaceTimeFreeze;
 		return %orig;
 }
 
-- (void)setIsInvincible:(BOOL)invc
+- (void)setIsInvincible:(BOOL)arg1
 {
 	if (EasyKillMonster)
 		%orig(NO);
@@ -158,7 +187,7 @@ static BOOL RaceTimeFreeze;
 // Blob never die
 - (void)setBlobIsKilled:(BOOL)arg1
 {
-	if (InfinityBlobHealth) { }
+	if (InfinityBlobHealth) { %orig(NO); }
 	else { %orig; }
 }
 
@@ -174,6 +203,24 @@ static BOOL RaceTimeFreeze;
 	else { %orig; }
 }
 
+- (void)setWaterIsLethal:(BOOL)arg1
+{
+	if (WaterNoDie) { %orig(NO); }
+	else { %orig; }
+}
+
+- (void)setBlobIsInvincible:(BOOL)arg1
+{
+	if (InfinityBlobHealth) { %orig(YES); }
+	else { %orig; }
+}
+
+- (void)applyDamage:(float)arg1
+{
+	if (InfinityBlobHealth) { }
+	else { %orig; }
+}
+
 // incase
 - (void)killBlobNoParticles
 {
@@ -184,8 +231,22 @@ static BOOL RaceTimeFreeze;
 // Blob never die in Water
 - (void)killBlobInWater
 {
-	if (WaterNoDie) { }
+	if (WaterNoDie) { if (AutoSR) AddBonus(9); }
 	else { %orig; }
+}
+
+- (void)startKinematicControlInPosition:(CGPoint)arg1 radius:(float)arg2
+{
+	%orig;
+	if (AutoBlobule) {
+		int i = 0;
+		for (i = 0; i < 250; i++) {	AddBonus(1); } }
+	if (AutoShield) {
+		int i = 0;
+		for (i = 0; i < 1; i++) { AddBonus(8); } }
+	if (AutoSuperSpeed)	{
+		int i = 0;
+		for (i = 0; i < 1; i++) { AddBonus(5); } }
 }
 
 - (BOOL)waterIsLethal
@@ -205,6 +266,14 @@ static BOOL RaceTimeFreeze;
 		return %orig;
 }
 
+- (BOOL)blobIsKilled
+{
+	if (InfinityBlobHealth)
+		return NO;
+	else
+		return %orig;
+}
+
 // Infinity keys
 - (BOOL)useKey
 {
@@ -212,6 +281,16 @@ static BOOL RaceTimeFreeze;
 		return YES;
 	else
 		return %orig;
+}
+
+%end
+
+%hook DRBlobsterParticleNode
+
+- (void)setBlobsterDeathUnderWater
+{
+	if (WaterNoDie) { }
+	else { %orig; }
 }
 
 %end
@@ -240,6 +319,16 @@ static BOOL RaceTimeFreeze;
 
 - (int)bonusMultiplier { return BonusValue; }
 
+%end
+
+%hook DRBonusManager
+
+- (void)addBonus:(int)arg1 fromTarget:(id)arg2
+{
+	id arg = arg2;
+	target = arg;
+	%orig(arg1, target);
+}
 %end
 
 %end
@@ -289,6 +378,8 @@ static BOOL RaceTimeFreeze;
 		return %orig;
 }
 
+- (void)dealloc { add = YES; %orig; }
+
 %end
 
 %end
@@ -301,6 +392,10 @@ static void loadHacks()
 	id waternodie = [dict objectForKey:@"waterNoDie"];
 	id hitmonsterwithoutdie = [dict objectForKey:@"hitMonsterWithoutDie"];
 	id infinitykey = [dict objectForKey:@"infinityKey"];
+	id autosr = [dict objectForKey:@"autoSR"];
+	id autoblobule = [dict objectForKey:@"autoBlobule"];
+	id autoshield = [dict objectForKey:@"autoShield"];
+	id autosuperspeed = [dict objectForKey:@"autoSuperSpeed"];
 	
 	id suckerissuck = [dict objectForKey:@"suckerIsSuck"];
 	id monsternoammo = [dict objectForKey:@"monsterNoAmmo"];
@@ -322,6 +417,10 @@ static void loadHacks()
 	WaterNoDie = waternodie ? [waternodie boolValue] : YES;
 	HitMonsterWithoutDie = hitmonsterwithoutdie ? [hitmonsterwithoutdie boolValue] : YES;
 	InfinityKey = infinitykey ? [infinitykey boolValue] : YES;
+	AutoSR = autosr ? [autosr boolValue] : YES;
+	AutoBlobule = autoblobule ? [autoblobule boolValue] : YES;
+	AutoShield = autoshield ? [autoshield boolValue] : YES;
+	AutoSuperSpeed = autosuperspeed ? [autosuperspeed boolValue] : YES;
 	
 	SuckerIsSuck = suckerissuck ? [suckerissuck boolValue] : YES;
 	MonsterNoAmmo = monsternoammo ? [monsternoammo boolValue] : YES;

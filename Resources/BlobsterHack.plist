@@ -20,6 +20,9 @@
         <string>PSGroupCell</string>
         <key>label</key>
         <string>Blob Hacks</string>
+        <key>footerText</key>
+      	<string>*Requires No Die (Under Water), automatically add swim ring to your blob when you fall into water, work only 1 time then after that your blob will be always able to float in water.
+**Activate when Blob is launched.</string>
       </dict>
       <dict>
         <key>cell</key>
@@ -74,6 +77,62 @@
         <string>infinityKey</string>
         <key>label</key>
         <string>Infinity Keys</string>
+        <key>PostNotification</key>
+        <string>com.PS.BlobsterHack.settingschanged</string>
+      </dict>
+      <dict>
+        <key>cell</key>
+        <string>PSSwitchCell</string>
+        <key>default</key>
+        <false/>
+        <key>defaults</key>
+        <string>com.PS.BlobsterHack</string>
+        <key>key</key>
+        <string>autoSR</string>
+        <key>label</key>
+        <string>Auto Swim Ring*</string>
+        <key>PostNotification</key>
+        <string>com.PS.BlobsterHack.settingschanged</string>
+      </dict>
+       <dict>
+        <key>cell</key>
+        <string>PSSwitchCell</string>
+        <key>default</key>
+        <false/>
+        <key>defaults</key>
+        <string>com.PS.BlobsterHack</string>
+        <key>key</key>
+        <string>autoBlobule</string>
+        <key>label</key>
+        <string>Auto Blobule**</string>
+        <key>PostNotification</key>
+        <string>com.PS.BlobsterHack.settingschanged</string>
+      </dict>
+      <dict>
+        <key>cell</key>
+        <string>PSSwitchCell</string>
+        <key>default</key>
+        <false/>
+        <key>defaults</key>
+        <string>com.PS.BlobsterHack</string>
+        <key>key</key>
+        <string>autoShield</string>
+        <key>label</key>
+        <string>Auto Shield**</string>
+        <key>PostNotification</key>
+        <string>com.PS.BlobsterHack.settingschanged</string>
+      </dict>
+      <dict>
+        <key>cell</key>
+        <string>PSSwitchCell</string>
+        <key>default</key>
+        <false/>
+        <key>defaults</key>
+        <string>com.PS.BlobsterHack</string>
+        <key>key</key>
+        <string>autoSuperSpeed</string>
+        <key>label</key>
+        <string>Auto Super Speed**</string>
         <key>PostNotification</key>
         <string>com.PS.BlobsterHack.settingschanged</string>
       </dict>
