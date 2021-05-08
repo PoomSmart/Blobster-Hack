@@ -13,8 +13,7 @@ static BOOL add = YES;
 
 static id target;
 // Its function for easier writing
-static void AddBonus(int type)
-{
+static void AddBonus(int type) {
     [[%c(DRBonusManager) sharedManager] addBonus:type fromTarget:target];
     // For Future reference, value of type:
     // 1 = Blobule (Scaled Blob)
@@ -55,10 +54,10 @@ static BOOL AlwaysBonusLevel;
 static BOOL TimeFreeze;
 static BOOL RaceTimeFreeze;
 
-// Relate with Monsters
+// Related to Monsters
 %group monster
 
-// No die when hit monsters
+// No dead when hit monsters
 %hook DREnemy
 
 - (BOOL)isHarmless {
@@ -153,12 +152,12 @@ static BOOL RaceTimeFreeze;
 
 %end
 
-// Relate with player's Blob
+// Related to player's Blob
 %group blob
 
 %hook DRBlobLayer
 
-// Blob never die
+// Blob never dies
 - (void)setBlobIsKilled:(BOOL)killed {
     %orig(InfinityBlobHealth ? NO : killed);
 }
@@ -192,7 +191,7 @@ static BOOL RaceTimeFreeze;
     %orig;
 }
 
-// Blob never die in Water
+// Blob never dies in Water
 - (void)killBlobInWater {
     if (WaterNoDie) {
         if (AutoSR) AddBonus(9);
@@ -317,8 +316,7 @@ static BOOL RaceTimeFreeze;
 
 %end
 
-static void loadHacks()
-{
+static void loadHacks() {
     NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.PS.BlobsterHack.plist"];
     id infinityblobhealth = [dict objectForKey:@"infinityBlobHealth"];
     id waternodie = [dict objectForKey:@"waterNoDie"];
