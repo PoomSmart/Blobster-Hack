@@ -1,1 +1,1 @@
-{ Filter = { Bundles = ( "com.chillingo.blobster" ); }; }
+{ Filter = { Bundles = ( "com.chillingo.blobster", "com.chillingo.blobsterhd" ); }; }

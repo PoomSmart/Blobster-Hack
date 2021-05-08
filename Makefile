@@ -1,7 +1,10 @@
-GO_EASY_ON_ME = 1
+export PREFIX = $(THEOS)/toolchain/Xcode11.xctoolchain/usr/bin/
+ARCHS = armv7 arm64 arm64e
+PACKAGE_VERSION = 1.0
+TARGET = iphone:clang:12.2:6.0
 
-include theos/makefiles/common.mk
-export ARCHS = armv7
+include $(THEOS)/makefiles/common.mk
+
 TWEAK_NAME = BlobsterHack
 BlobsterHack_FILES = Tweak.xm
 
